@@ -2,17 +2,17 @@ import { useState } from 'react';
 
 type CardTileProps = {
   title: string;
-  rank: string;
-  description: string;
+  tag: string;
+  text: string;
 };
 
-const CardTile = ({ title, rank, description }: CardTileProps) => {
+const CardTile = ({ title, tag, text }: CardTileProps) => {
   const [showDescription, setShowDescription] = useState(false);
   return (
     <>
       <h3>{title}</h3>
-      <span>{rank}</span>
-      <p>{description}</p>
+      <span>{tag}</span>
+      <p>{text}</p>
       <button onClick={() => setShowDescription(!showDescription)}>
         {showDescription ? 'Show less' : 'Learn more...'}
       </button>

@@ -1,10 +1,16 @@
-// import { useState } from 'react';
-import CardTile from './CardTile';
+import CardTile from './CardTile.tsx';
 
-const CompanyCard = ({ companyName }: { companyName: string }) => {
-  // const [showState, setShowState] = useState(false);
+const CompanyCard = ({
+  companyName,
+  perks,
+}: {
+  companyName: string;
+  perks: Record<string, Record<string, string>>;
+}) => {
   const closeCard = () => {};
   const expandAllPerks = () => {};
+
+  const perksCategories = Object.keys(perks);
 
   return (
     <>
@@ -12,9 +18,9 @@ const CompanyCard = ({ companyName }: { companyName: string }) => {
       <button onClick={() => closeCard}>x</button>
       <button onClick={() => expandAllPerks}>Expand all</button>
 
-      {[].map((perk) => {
-        const { title, rank, description } = perk;
-        return <CardTile title={title} rank={rank} description={description} />;
+      {perksCategories.map((perkCategory) => {
+        const { title, tag, text } = perks[perkCategory];
+        return <CardTile title={title} tag={tag} text={text} />;
       })}
     </>
   );
