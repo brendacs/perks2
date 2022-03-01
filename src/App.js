@@ -2,11 +2,12 @@ import './App.css';
 import Header from './components/Header.tsx';
 import CompanyCard from './components/CompanyCard.tsx';
 import perks from './data/perks.json';
+import {companyNameList} from './utils/helper.ts';
 
 import { useState } from 'react';
+import AddCompanyCard from './components/AddCompanyCard.tsx';
 
 function App() {
-  const companyNameList = Object.keys(perks).sort();
   const firstThree = companyNameList.slice(0, 3);
 
   const [activeCardsList, setActiveCardsList] = useState(firstThree);
@@ -17,6 +18,7 @@ function App() {
       {activeCardsList.map((name) => (
         <CompanyCard companyName={name} key={name} perks={perks[name]} />
       ))}
+      <AddCompanyCard />
     </div>
   );
 }
