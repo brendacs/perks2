@@ -1,7 +1,6 @@
-import CardTile from './CardTile.tsx';
 import Search from './Search.tsx';
 
-const AddCompanyCard = () => {
+function AddCompanyCard() {
   return (
     <>
       <h2>Add Company</h2>
@@ -13,6 +12,6 @@ const AddCompanyCard = () => {
       <Search />
     </>
   );
-};
+}
 
 export default AddCompanyCard;

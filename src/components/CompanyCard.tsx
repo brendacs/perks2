@@ -1,12 +1,12 @@
 import CardTile from './CardTile.tsx';
 
-const CompanyCard = ({
+function CompanyCard({
   companyName,
   perks,
 }: {
   companyName: string;
   perks: Record<string, Record<string, string>>;
-}) => {
+}) {
   const closeCard = () => {};
   const expandAllPerks = () => {};
 
@@ -15,8 +15,8 @@ const CompanyCard = ({
   return (
     <>
       <h2 className="header">{companyName}</h2>
-      <button onClick={() => closeCard}>x</button>
-      <button onClick={() => expandAllPerks}>Expand all</button>
+      <button type="button" onClick={() => closeCard}>x</button>
+      <button type="button" onClick={() => expandAllPerks}>Expand all</button>
 
       {perksCategories.map((perkCategory) => {
         const { title, tag, text } = perks[perkCategory];
@@ -24,6 +24,6 @@ const CompanyCard = ({
       })}
     </>
   );
-};
+}
 
 export default CompanyCard;

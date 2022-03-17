@@ -1,10 +1,10 @@
 import './App.css';
+import { useState } from 'react';
 import Header from './components/Header.tsx';
 import CompanyCard from './components/CompanyCard.tsx';
 import perks from './data/perks.json';
-import {companyNameList} from './utils/helper.ts';
+import { companyNameList } from './utils/helper.ts';
 
-import { useState } from 'react';
 import AddCompanyCard from './components/AddCompanyCard.tsx';
 
 function App() {

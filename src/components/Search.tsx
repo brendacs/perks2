@@ -1,7 +1,7 @@
-import {useState} from 'react';
-import {companyNameList} from '../utils/helper.ts';
+import { useState } from 'react';
+import { companyNameList } from '../utils/helper.ts';
 
-const Search = () => {
+function Search() {
   const [filteredCompanyNameList, setFilteredCompanyNameList] = useState([]);
 
   const filterCompanyNameList = (value): void => {
@@ -17,13 +17,11 @@ const Search = () => {
         placeholder="Find a company"
         onChange={(e) => filterCompanyNameList(e.target.value)}
       />
-      {filteredCompanyNameList.map((companyName) => {
-        return (
-          <button key={companyName}>{companyName}</button>
-        );
-      })}
+      {filteredCompanyNameList.map((companyName) => (
+        <button type="button" key={companyName}>{companyName}</button>
+      ))}
     </>
   );
-};
+}
 
 export default Search;
