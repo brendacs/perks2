@@ -1,0 +1,35 @@
+@import '../variables.scss';
+
+.company-card-container {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 300px;
+	margin: 50px 2.5vw;
+	padding: 20px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	box-shadow: rgb(179 179 179) -1px 3px 20px -10px;
+	position: relative;
+
+	h2.header {
+		font-size: 28px;
+	}
+
+	.close-button {
+		color: $error-color;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 22px;
+
+		&:hover {
+			color: $dark-error-color;
+		}
+	}
+
+	.expand-button {
+		color: $link-color;
+		text-align: left;
+	}
+}
