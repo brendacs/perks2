@@ -2,19 +2,19 @@ import Tag from './Tag.tsx';
 import { useState } from 'react';
 
 interface CardTileProps {
-	title: string;
+	expandAllPerks: boolean;
+	category: string;
 	tag: string;
 	text: string;
 }
 
-function CardTile({ title, tag, text }: CardTileProps) {
+function CardTile({ expandAllPerks, category, tag, text }: CardTileProps) {
 	const [showDescription, setShowDescription] = useState(false);
 	return (
 		<>
-			<h3>{title}</h3>
-			<p>{text}</p>
+			<h1>{category}</h1>
 			<Tag tag={tag} />
-			<p>{text}</p>
+			{showDescription || (expandAllPerks && <p>{text}</p>)}
 			<button type="button" onClick={() => setShowDescription(!showDescription)}>
 				{showDescription ? 'Show less' : 'Learn more...'}
 			</button>

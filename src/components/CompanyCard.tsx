@@ -1,9 +1,10 @@
 import CardTile from './CardTile.tsx';
+import { useState } from 'react';
 import './CompanyCard.scss';
 
 function CompanyCard({ companyName, perks }: { companyName: string; perks: Record<string, Record<string, string>> }) {
 	const closeCard = () => {};
-	const expandAllPerks = () => {};
+	const [expandAllPerks, setExpandAllPerks] = useState(false);
 
 	const perksCategories = Object.keys(perks);
 
@@ -13,13 +14,13 @@ function CompanyCard({ companyName, perks }: { companyName: string; perks: Recor
 			<button className="close-button" type="button" onClick={() => closeCard}>
 				x
 			</button>
-			<button className="expand-button" type="button" onClick={() => expandAllPerks}>
-				Expand all
+			<button className="expand-button" type="button" onClick={() => setExpandAllPerks(!expandAllPerks)}>
+				{expandAllPerks ? 'Compress all' : 'Expand all'}
 			</button>
 
 			{perksCategories.map((perkCategory) => {
-				const { title, tag, text } = perks[perkCategory];
-				return <CardTile title={title} tag={tag} text={text} />;
+				const { category, tag, text } = perks[perkCategory];
+				return <CardTile expandAllPerks={expandAllPerks} category={category} tag={tag} text={text} />;
 			})}
 		</div>
 	);
