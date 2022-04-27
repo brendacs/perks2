@@ -14,7 +14,7 @@ function CardTile({ expandAllPerks, category, tag, text }: CardTileProps) {
 		<>
 			<h1>{category}</h1>
 			<Tag tag={tag} />
-			{showDescription || (expandAllPerks && <p>{text}</p>)}
+			{(showDescription || expandAllPerks) && <p>{text}</p>}
 			<button type="button" onClick={() => setShowDescription(!showDescription)}>
 				{showDescription ? 'Show less' : 'Learn more...'}
 			</button>
