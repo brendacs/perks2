@@ -4,6 +4,7 @@ import Header from './components/Header.tsx';
 import CompanyCard from './components/CompanyCard.tsx';
 import perks from './data/perks.json';
 import { companyNameList } from './utils/helper.ts';
+import Sidebar from './components/Sidebar.tsx';
 import './App.scss';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
 				))}
 			</div>
 			{/* <AddCompanyCard /> */}
+			<div className="side-bar">
+				<Sidebar />
+			</div>
 		</div>
 	);
 }
