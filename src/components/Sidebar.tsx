@@ -12,8 +12,6 @@ function Sidebar() {
 	const closeCard = () => {};
 	const [expandAllPerks, setExpandAllPerks] = useState(false);
 
-	// const sortedPerks = Object.keys(perks);
-
 	return (
 		<div className="sidebar-container">
 			<h2 className="header">Companies</h2>
