@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { companyNameList, sortedPerks } from '../utils/helper.ts';
+import './Sidebar.scss';
 
 // interface SidebarProps {
 // 	expandAllPerks: boolean;
@@ -9,8 +10,8 @@ import { companyNameList, sortedPerks } from '../utils/helper.ts';
 // }
 
 function Sidebar() {
-	const closeCard = () => {};
-	const [expandAllPerks, setExpandAllPerks] = useState(false);
+	// const closeCard = () => {};
+	// const [expandAllPerks, setExpandAllPerks] = useState(false);
 
 	return (
 		<div className="sidebar-container">
@@ -18,7 +19,7 @@ function Sidebar() {
 			<ul>
 				{companyNameList.map((companyName) => (
 					<li>
-						<button>{companyName}</button>
+						<button>{companyName[0].toUpperCase() + companyName.slice(1)}</button>
 					</li>
 				))}
 			</ul>

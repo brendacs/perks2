@@ -13,14 +13,16 @@ function App() {
 	const [activeCardsList, setActiveCardsList] = useState(firstThree);
 
 	return (
-		<div className="App">
-			<Header />
-			<div className="company-cards">
-				{activeCardsList.map((name) => (
-					<CompanyCard companyName={name} key={name} perks={perks[name]} />
-				))}
+		<div className="app">
+			<div>
+				<Header />
+				<div className="company-cards">
+					{activeCardsList.map((name) => (
+						<CompanyCard companyName={name} key={name} perks={perks[name]} />
+					))}
+				</div>
+				{/* <AddCompanyCard /> */}
 			</div>
-			{/* <AddCompanyCard /> */}
 			<div className="side-bar">
 				<Sidebar />
 			</div>

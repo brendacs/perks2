@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -177,4 +177,8 @@ a {
 p,
 a {
 	font-size: 16px;
+}
+
+h2 {
+	font-size: 24px;
 }
