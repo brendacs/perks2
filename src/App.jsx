@@ -8,6 +8,11 @@ import Sidebar from './components/Sidebar.tsx';
 import './App.scss';
 
 function App() {
+
+	// 1. when I click the side bar button it should render a <Companycard/>
+	//     a. the button should take an onClick function that does stuff
+	//
+
 	const firstThree = companyNameList.slice(0, 3);
 
 	const [activeCardsList, setActiveCardsList] = useState(firstThree);
