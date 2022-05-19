@@ -16,6 +16,10 @@
 		font-size: 28px;
 	}
 
+	button {
+		cursor: pointer;
+	}
+
 	.close-button {
 		color: $error-color;
 		position: absolute;

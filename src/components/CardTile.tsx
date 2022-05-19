@@ -1,5 +1,6 @@
 import Tag from './Tag.tsx';
 import { useState } from 'react';
+import './CardTile.scss';
 
 interface CardTileProps {
 	expandAllPerks: boolean;
@@ -15,7 +16,7 @@ function CardTile({ expandAllPerks, category, tag, text }: CardTileProps) {
 			<h1>{category}</h1>
 			<Tag tag={tag} />
 			{(showDescription || expandAllPerks) && <p>{text}</p>}
-			<button type="button" onClick={() => setShowDescription(!showDescription)}>
+			<button className="description-toggle" type="button" onClick={() => setShowDescription(!showDescription)}>
 				{showDescription ? 'Show less' : 'Learn more...'}
 			</button>
 		</>
