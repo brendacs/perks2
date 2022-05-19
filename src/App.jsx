@@ -24,7 +24,7 @@ function App() {
 		} else {
 			// Push a company to the activeCardsList
 			// Use setActiveCardsList to do that
-			setActiveCardsList(activeCardsList.push(companyName));
+			setActiveCardsList([...activeCardsList, companyName]);
 		}
 	};
 
