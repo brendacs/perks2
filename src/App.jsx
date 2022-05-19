@@ -1,12 +1,13 @@
 import { useState } from 'react';
-// import AddCompanyCard from './components/AddCompanyCard.tsx';
+import AddCompanyCard from './components/AddCompanyCard.tsx';
 import Header from './components/Header.tsx';
 import CompanyCard from './components/CompanyCard.tsx';
 import perks from './data/perks.json';
 import { companyNameList } from './utils/helper.ts';
 import Sidebar from './components/Sidebar.tsx';
 import './App.scss';
-import { render } from '@testing-library/react';
+
+const EMPTY_CARD = 'empty';
 
 function App() {
 	const firstThree = companyNameList.slice(0, 3);
@@ -31,8 +32,8 @@ function App() {
 	const onClickCloseButton = (idx) => {
 		let cards = [...activeCardsList];
 		cards.splice(idx, 1);
+		cards.push(EMPTY_CARD);
 		setActiveCardsList(cards);
-		console.log(cards);
 	};
 
 	return (
@@ -40,16 +41,20 @@ function App() {
 			<div>
 				<Header />
 				<div className="company-cards">
-					{activeCardsList.map((name, idx) => (
-						<CompanyCard
-							companyName={name}
-							key={name}
-							perks={perks[name]}
-							onClickCloseButton={() => onClickCloseButton(idx)}
-						/>
-					))}
+					{activeCardsList.map((name, idx) => {
+						if (name === 'empty') {
+							return <AddCompanyCard />;
+						}
+						return (
+							<CompanyCard
+								companyName={name}
+								key={name}
+								perks={perks[name]}
+								onClickCloseButton={() => onClickCloseButton(idx)}
+							/>
+						);
+					})}
 				</div>
-				{/* <AddCompanyCard /> */}
 			</div>
 			<div className="side-bar">
 				<Sidebar onClickSideBarButton={onClickSideBarButton} />
