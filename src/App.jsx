@@ -29,7 +29,7 @@ function App() {
 	};
 
 	const onClickCloseButton = (idx) => {
-		let cards = activeCardsList;
+		let cards = [...activeCardsList];
 		cards.splice(idx, 1);
 		setActiveCardsList(cards);
 		console.log(cards);
