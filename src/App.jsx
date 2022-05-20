@@ -38,8 +38,8 @@ function App() {
 
 	return (
 		<div className="app">
-			<div>
-				<Header />
+			<Header />
+			<div className="app-content">
 				<div className="company-cards">
 					{activeCardsList.map((name, idx) => {
 						if (name === 'empty') {
@@ -55,9 +55,9 @@ function App() {
 						);
 					})}
 				</div>
-			</div>
-			<div className="side-bar">
-				<Sidebar onClickSideBarButton={onClickSideBarButton} />
+				<div className="side-bar">
+					<Sidebar onClickSideBarButton={onClickSideBarButton} />
+				</div>
 			</div>
 		</div>
 	);

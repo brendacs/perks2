@@ -1,10 +1,10 @@
 import Search from './Search.tsx';
-import './CompanyCard.scss';
+import './AddCompanyCard.scss';
 
 function AddCompanyCard() {
 	return (
 		<div className="company-card-container empty">
-			<h2>Add Company</h2>
+			<h2 className="header">Add Company</h2>
 			<h3>Company Sidebar</h3>
 			<p>Add another company to compare perks</p>
 			<h3>Perks Sidebar</h3>

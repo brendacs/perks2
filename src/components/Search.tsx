@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { companyNameList } from '../utils/helper.ts';
+import './Search.scss';
 
 function Search() {
 	const [filteredCompanyNameList, setFilteredCompanyNameList] = useState([]);
@@ -15,7 +16,11 @@ function Search() {
 
 	return (
 		<>
-			<input placeholder="Find a company" onChange={(e) => filterCompanyNameList(e.target.value)} />
+			<input
+				className="search"
+				placeholder="Find a company"
+				onChange={(e) => filterCompanyNameList(e.target.value)}
+			/>
 			{filteredCompanyNameList.map((companyName) => (
 				<button type="button" key={companyName}>
 					{companyName}

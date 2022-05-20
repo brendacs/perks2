@@ -1,8 +1,17 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.app-content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .company-cards {
 	display: flex;
 	flex-direction: row;
-}
-
-.app {
-	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }

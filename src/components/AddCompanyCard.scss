@@ -1,6 +1,6 @@
 @import '../variables.scss';
 
-.company-card-container {
+.company-card-container.empty {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
@@ -16,29 +16,20 @@
 
 	h2.header {
 		font-size: 28px;
-		margin-bottom: 10px;
+		margin-bottom: 40px;
+	}
+
+	h3 {
+		padding-bottom: 10px;
+		font-size: 20px;
+	}
+
+	p {
+		padding-bottom: 40px;
+		font-weight: 400;
 	}
 
 	button {
 		cursor: pointer;
-	}
-
-	.close-button {
-		color: $error-color;
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		font-size: 22px;
-
-		&:hover {
-			color: $dark-error-color;
-		}
-	}
-
-	.expand-button {
-		color: $link-color;
-		text-align: left;
-		padding: 0;
-		margin-bottom: 30px;
 	}
 }

@@ -1,20 +1,25 @@
 @import '../variables.scss';
 
 .sidebar-container {
-  margin-top: 8.5vh;
+	margin-left: 40px;
 
-  ul {
-    margin-bottom: 20px;
-  }
+	.header {
+		margin-bottom: 15px;
+	}
 
-  button {
-    color: $link-color;
-    transition: all 0.15s;
-    white-space: nowrap;
+	ul {
+		margin-bottom: 20px;
+	}
 
-    &:hover {
-      color: $darker-link-color;
-      cursor: pointer;
-    }
-  }
+	button {
+		color: $link-color;
+		transition: all 0.15s;
+		white-space: nowrap;
+		padding: 0;
+
+		&:hover {
+			color: $darker-link-color;
+			cursor: pointer;
+		}
+	}
 }

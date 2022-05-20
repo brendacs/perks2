@@ -1,8 +1,27 @@
+@import '../variables.scss';
+
+.card-tile {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 20px;
+
+	p {
+		font-weight: 400;
+		font-size: 14px;
+		padding-bottom: 20px;
+	}
+}
+
 .tag {
 	border-radius: 5px;
 	color: white;
 }
 
-.description-toggle:hover {
+.description-toggle {
+	color: $link-color;
 	cursor: pointer;
+	text-align: left;
+	padding: 0;
 }

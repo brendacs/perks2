@@ -12,14 +12,14 @@ interface CardTileProps {
 function CardTile({ expandAllPerks, category, tag, text }: CardTileProps) {
 	const [showDescription, setShowDescription] = useState(false);
 	return (
-		<>
+		<div className="card-tile">
 			<h1>{category}</h1>
 			<Tag tag={tag} />
 			{(showDescription || expandAllPerks) && <p>{text}</p>}
 			<button className="description-toggle" type="button" onClick={() => setShowDescription(!showDescription)}>
 				{showDescription ? 'Show less' : 'Learn more...'}
 			</button>
-		</>
+		</div>
 	);
 }
 
