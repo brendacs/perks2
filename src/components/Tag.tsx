@@ -9,13 +9,13 @@ const nameToColorMap = {
 };
 
 interface TagProps {
-	tag: string;
+	name: 'Excellent' | 'Fair' | 'Good' | 'Poor' | 'None';
 }
 
-const Tag = ({ tag }: TagProps) => {
+const Tag = ({ name }: TagProps) => {
 	return (
-		<span className="tag" style={{ background: nameToColorMap[tag.toLowerCase()] }}>
-			{tag}
+		<span className="tag" style={{ background: nameToColorMap[name.toLowerCase()] }}>
+			{name}
 		</span>
 	);
 };
