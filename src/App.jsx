@@ -39,31 +39,34 @@ function App() {
 	};
 
 	return (
-		<div className="app">
-			<Header />
-			<div className="app-content">
-				<div className="company-cards">
-					{activeCardsList.map((name, idx) => {
-						if (name === 'empty') {
-							return <AddCompanyCard />;
-						}
-						return (
-							<CompanyCard
-								companyName={name}
-								key={name}
-								perks={perks[name]}
-								onClickCloseButton={() => onClickCloseButton(idx)}
-							/>
-						);
-					})}
+		<>
+			<div className="app">
+				<Header />
+				<div className="app-content">
+					<div className="company-cards">
+						{activeCardsList.map((name, idx) => {
+							if (name === 'empty') {
+								return <AddCompanyCard />;
+							}
+							return (
+								<CompanyCard
+									companyName={name}
+									key={name}
+									perks={perks[name]}
+									onClickCloseButton={() => onClickCloseButton(idx)}
+								/>
+							);
+						})}
+					</div>
+					<div className="side-bar">
+						<Sidebar onClickSideBarButton={onClickSideBarButton} />
+					</div>
+					<div>{showModal && <ScoringGuideModal />}</div>
+					<button className="modal-button" onClick={() => setShowModal(!showModal)}>?</button>
 				</div>
-				<div className="side-bar">
-					<Sidebar onClickSideBarButton={onClickSideBarButton} />
-				</div>
-				<div>{showModal && <ScoringGuideModal />}</div>
-				<button onClick={() => setShowModal(!showModal)}>akfjlkajsfkalsjfklasjfklaj</button>
 			</div>
-		</div>
+			{showModal && <div className="overlay" />}
+		</>
 	);
 }
 

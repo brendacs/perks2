@@ -1,6 +1,7 @@
 // import 'ScoringGuideModal.scss';
 import guide from '../data/guide.ts';
 import Tag from './Tag.tsx';
+import './ScoringGuideModal.scss';
 
 function ScoringGuideDataRows() {
 	return (
@@ -21,31 +22,35 @@ function ScoringGuideDataRows() {
 
 function ScoringGuideModal() {
 	return (
-		<div className="guide-modal">
-			<h1>Scoring Guide</h1>
-			<h2>lorem ipsum</h2>
-			<table>
-				<tr>
-					<th>Category</th>
-					<th>
-						<Tag name="Excellent"></Tag>
-					</th>
-					<th>
-						<Tag name="Good"></Tag>
-					</th>
-					<th>
-						<Tag name="Fair"></Tag>
-					</th>
-					<th>
-						<Tag name="Poor"></Tag>
-					</th>
-					<th>
-						<Tag name="None"></Tag>
-					</th>
-				</tr>
-				<ScoringGuideDataRows />
-			</table>
-		</div>
+		<>
+			<div className="guide-modal">
+				<h1>Scoring Guide</h1>
+				<h2>lorem ipsum</h2>
+				<table>
+					<tr>
+						<th>Category</th>
+						<th>
+							<Tag name="Excellent"></Tag>
+						</th>
+						<th>
+							<Tag name="Good"></Tag>
+						</th>
+						<th>
+							<Tag name="Fair"></Tag>
+						</th>
+						<th>
+							<Tag name="Poor"></Tag>
+						</th>
+						<th>
+							<Tag name="None"></Tag>
+						</th>
+					</tr>
+					<ScoringGuideDataRows />
+				</table>
+			</div>
+			{/** Style this next time */}
+			<p>Click anywhere to close</p>
+		</>
 	);
 }
 
