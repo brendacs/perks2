@@ -5,6 +5,7 @@ import CompanyCard from './components/CompanyCard.tsx';
 import perks from './data/perks.json';
 import { companyNameList } from './utils/helper.ts';
 import Sidebar from './components/Sidebar.tsx';
+import ScoringGuideModal from './components/ScoringGuideModal.tsx';
 import './App.scss';
 
 const EMPTY_CARD = 'empty';
@@ -12,6 +13,7 @@ const EMPTY_CARD = 'empty';
 function App() {
 	const firstThree = companyNameList.slice(0, 3);
 	const [activeCardsList, setActiveCardsList] = useState(firstThree);
+	const [showModal, setShowModal] = useState(false);
 
 	const onClickSideBarButton = (companyName) => {
 		// If (there are already three cards in the activeCardsList)
@@ -58,6 +60,8 @@ function App() {
 				<div className="side-bar">
 					<Sidebar onClickSideBarButton={onClickSideBarButton} />
 				</div>
+				<div>{showModal && <ScoringGuideModal />}</div>
+				<button onClick={() => setShowModal(!showModal)}>akfjlkajsfkalsjfklasjfklaj</button>
 			</div>
 		</div>
 	);
