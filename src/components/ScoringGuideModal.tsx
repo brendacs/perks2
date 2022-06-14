@@ -30,7 +30,11 @@ function ScoringGuideModal({ close }: ScoringGuideModalProps) {
 			<div className="guide-modal">
 				<button onClick={close}>X</button>
 				<h1>Scoring Guide</h1>
-				<h2>lorem ipsum</h2>
+				<h2>
+					There is no exact way to evaluate benefits. However, we try to create rankings that reflect the packages
+					as objectively as possible. The criteria by which we rate benefits is charted out below. If there are
+					multiple components to a benefit, the scores for each component are averaged.
+				</h2>
 				<table>
 					<tr>
 						<th>Category</th>
