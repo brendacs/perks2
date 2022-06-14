@@ -38,6 +38,10 @@ function App() {
 		setActiveCardsList(cards);
 	};
 
+	const onClickModalClose = () => {
+		setShowModal(false);
+	};
+
 	return (
 		<>
 			<div className="app">
@@ -61,11 +65,13 @@ function App() {
 					<div className="side-bar">
 						<Sidebar onClickSideBarButton={onClickSideBarButton} />
 					</div>
-					<div>{showModal && <ScoringGuideModal />}</div>
-					<button className="modal-button" onClick={() => setShowModal(!showModal)}>?</button>
+					<div>{showModal && <ScoringGuideModal close={onClickModalClose} />}</div>
+					<button className="modal-button" onClick={() => setShowModal(!showModal)}>
+						?
+					</button>
 				</div>
 			</div>
-			{showModal && <div className="overlay" />}
+			{showModal && <div onClick={() => onClickModalClose} className="overlay" />}
 		</>
 	);
 }

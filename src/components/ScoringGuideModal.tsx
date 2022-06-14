@@ -20,10 +20,15 @@ function ScoringGuideDataRows() {
 	);
 }
 
-function ScoringGuideModal() {
+interface ScoringGuideModalProps {
+	close: () => {};
+}
+
+function ScoringGuideModal({ close }: ScoringGuideModalProps) {
 	return (
 		<>
 			<div className="guide-modal">
+				<button onClick={close}>X</button>
 				<h1>Scoring Guide</h1>
 				<h2>lorem ipsum</h2>
 				<table>
